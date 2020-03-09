@@ -1,17 +1,17 @@
 {
-  "name": "@softwareventures/time",
+  "name": "@softwareventures/date",
   "version": "0.0.0-development",
-  "description": "Time and date library",
-  "repository": "github:softwareventures/time",
+  "description": "An abstract date, with no associated time zone",
+  "repository": "github:softwareventures/date",
   "keywords": [
-    "time",
     "date",
+    "time",
     "TypeScript"
   ],
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
   "license": "ISC",
-  "bugs": "https://github.com/softwareventures/time/issues",
-  "homepage": "https://github.com/softwareventures/time",
+  "bugs": "https://github.com/softwareventures/date/issues",
+  "homepage": "https://github.com/softwareventures/date",
   "scripts": {
     "prepare": "tsc",
     "test": "tslint --project . && ava",

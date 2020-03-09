@@ -1,5 +1,5 @@
 import test from "ava";
-import {fromReferenceDays, isValid, toReferenceDays} from "./date";
+import {fromReferenceDays, isValid, toReferenceDays} from "./index";
 
 test("isValid", t => {
     t.false(isValid({year: 0, month: 0, day: 0}));
