@@ -111,6 +111,12 @@ export function isValidDate(value: unknown): value is Date {
     return isDate(value) && isValid(value);
 }
 
+/**
+ * Tests if the specified Date object represents a valid date.
+ *
+ * Returns true if the year, month and day fields are all integers inside the
+ * valid range.
+ */
 export function isValid(date: Readonly<Date>): boolean {
     return isInteger(date.year)
         && isIntegerInRange(date.month, JANUARY, DECEMBER)
