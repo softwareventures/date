@@ -36,6 +36,17 @@ export function daysInMonth(month: number, year: number): number {
     }
 }
 
+export function isDate(value: unknown): value is Date {
+    return typeof value === "object"
+        && value != null
+        && "year" in value
+        && typeof (value as {year: unknown}).year === "number"
+        && "month" in value
+        && typeof (value as {month: unknown}).month === "number"
+        && "day" in value
+        && typeof (value as {day: unknown}).day === "number";
+}
+
 export function isValid(date: Readonly<Date>): boolean {
     return isInteger(date.year)
         && isIntegerInRange(date.month, JANUARY, DECEMBER)
