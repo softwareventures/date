@@ -135,6 +135,12 @@ export function validate(date: Readonly<Date>): void {
     }
 }
 
+/**
+ * Normalizes the specified date object so that it represents a valid date.
+ *
+ * If the month or day fields are outside the valid range, then they will
+ * roll over into the next month or year.
+ */
 export function normalize(date: Readonly<Date>): Date {
     return fromReferenceDays(toReferenceDays(date));
 }
