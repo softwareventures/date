@@ -3,10 +3,24 @@
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
 
-/** An abstract date, with no associated time zone. */
+/** An date in the Gregorian calendar, with no associated time zone. */
 export interface Date {
+    /** The day of the month. Should be in the range 1-31. */
     day: number;
+    /** The month of the year. Should be in the range 1-12. */
     month: number;
+    /**
+     * The year.
+     *
+     * Positive values represent years in the Common Era (CE/AD). For example
+     * 2020 represents 2020 CE, the year this module was first published to npm.
+     *
+     * Negative values or zero represent years before the Common Era (BCE/BC).
+     * Zero represents 1 BCE, -1 represents 2 BCE, -2 represents 3 BCE, etc.
+     *
+     * Note that there is no year zero in the Gregorian calendar. The year
+     * 1 BCE was immediately followed by 1 CE.
+     */
     year: number;
 }
 
