@@ -55,6 +55,19 @@ export function isLeapYear(year: number): boolean {
         || (year % 400 === 0);
 }
 
+/**
+ * Returns the number of days in the specified month in the specified year.
+ *
+ * @param month - An integer representing the month, in the range 1 (January)
+ *   to 12 (December).
+ *
+ * @param year - An integer representing the year. Positive values represent
+ *   years in the Common Era (CE/AD). For example 2020 represents 2020 CE, the
+ *   year this module was first published to npm. Negative values or zero
+ *   represent years before the Common Era (BCE/BC). Zero represents 1 BCE,
+ *   -1 represents 2 BCE, -2 represents 3 BCE, etc. There is no year zero in
+ *   the Gregorian calendar. The year 1 BCE was immediately followed by 1 CE.
+ */
 export function daysInMonth(month: number, year: number): number {
     if (month < JANUARY || month > DECEMBER) {
         throw new Error("Invalid month");
