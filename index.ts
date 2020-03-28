@@ -47,6 +47,10 @@ export function isDate(value: unknown): value is Date {
         && typeof (value as {day: unknown}).day === "number";
 }
 
+export function isValidDate(value: unknown): value is Date {
+    return isDate(value) && isValid(value);
+}
+
 export function isValid(date: Readonly<Date>): boolean {
     return isInteger(date.year)
         && isIntegerInRange(date.month, JANUARY, DECEMBER)
