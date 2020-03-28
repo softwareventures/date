@@ -1,3 +1,5 @@
+/** @file Data types and functions for working with dates in the Gregorian calendar. */
+
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
 
@@ -40,11 +42,11 @@ export function isDate(value: unknown): value is Date {
     return typeof value === "object"
         && value != null
         && "year" in value
-        && typeof (value as {year: unknown}).year === "number"
+        && typeof (value as { year: unknown }).year === "number"
         && "month" in value
-        && typeof (value as {month: unknown}).month === "number"
+        && typeof (value as { month: unknown }).month === "number"
         && "day" in value
-        && typeof (value as {day: unknown}).day === "number";
+        && typeof (value as { day: unknown }).day === "number";
 }
 
 export function isValidDate(value: unknown): value is Date {
