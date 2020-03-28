@@ -144,9 +144,9 @@ export function normalize(date: Readonly<Date>): Date {
  * reference date of 1st January, 1 CE.
  */
 export function toReferenceDays(date: Partial<Readonly<Date>>): number {
-    const day = date.day == null ? 1 : date.day;
-    const month = date.month == null ? 1 : date.month;
-    const year = date.year == null ? 1 : date.year;
+    const day = date.day ?? 1;
+    const month = date.month ?? 1;
+    const year = date.year ?? 1;
 
     const referenceMonths = (year - 1) * 12 + month - 1;
 
