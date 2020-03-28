@@ -123,6 +123,12 @@ export function isValid(date: Readonly<Date>): boolean {
         && isIntegerInRange(date.day, 1, daysInMonth(date.month, date.year));
 }
 
+/**
+ * Asserts that the specified Date object represents a valid date.
+ *
+ * @throws {Error} if any of the year, month or day fields are non-integers or
+ *   outside the valid range.
+ */
 export function validate(date: Readonly<Date>): void {
     if (!isValid(date)) {
         throw new Error("Invalid date");
