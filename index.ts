@@ -101,6 +101,12 @@ export function isDate(value: unknown): value is Date {
         && typeof (value as { day: unknown }).day === "number";
 }
 
+/**
+ * Tests if the specified value is a Date object representing a valid date.
+ *
+ * Returns true if the value is an object with a numeric year, month and day
+ * fields and the fields are all integers inside the valid range.
+ */
 export function isValidDate(value: unknown): value is Date {
     return isDate(value) && isValid(value);
 }
