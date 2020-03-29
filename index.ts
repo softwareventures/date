@@ -306,3 +306,11 @@ export function afterOrEqual(a: Readonly<Date>, b: Readonly<Date>): boolean {
 export function afterOrEqualFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
     return a => afterOrEqual(a, b);
 }
+
+export function earliest<T extends Readonly<Date>, U extends Readonly<Date>>(a: T, b: U): T | U {
+    return after(a, b) ? b : a;
+}
+
+export function earliestFn<T extends Readonly<Date>, U extends Readonly<Date>>(b: U): (a: T) => T | U {
+    return a => earliest(a, b);
+}
