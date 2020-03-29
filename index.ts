@@ -238,3 +238,13 @@ export function fromReferenceDays(referenceDays: number): Date {
 
     return {day, month, year};
 }
+
+export function equal(a: Readonly<Date>, b: Readonly<Date>): boolean {
+    return a.year === b.year
+        && a.month === b.month
+        && a.day === b.day;
+}
+
+export function equalFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
+    return a => equal(a, b);
+}
