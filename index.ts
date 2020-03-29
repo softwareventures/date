@@ -328,3 +328,8 @@ export function todayUtc(): Date {
     const today = new JsDate();
     return {day: today.getUTCDate(), month: today.getUTCMonth() + 1, year: today.getUTCFullYear()};
 }
+
+export function todayLocal(): Date {
+    const today = new JsDate();
+    return {day: today.getDate(), month: today.getMonth() + 1, year: today.getFullYear()};
+}
