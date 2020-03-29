@@ -2,6 +2,7 @@
 
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
+import {Comparator, Comparison} from "@softwareventures/ordered";
 
 /** An date in the Gregorian calendar, with no associated time zone. */
 export interface Date {
@@ -253,4 +254,23 @@ export function notEqual(a: Readonly<Date>, b: Readonly<Date>): boolean {
 
 export function notEqualFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
     return a => notEqual(a, b);
+}
+
+export const compare: Comparator<Readonly<Date>> = (a, b) => {
+    const ad = toReferenceDays(a);
+    const bd = toReferenceDays(b);
+
+    if (ad < bd) {
+        return Comparison.before;
+    } else if (ad > bd) {
+        return Comparison.after;
+    } else if (ad === bd) {
+        return Comparison.equal;
+    } else {
+        return Comparison.undefined;
+    }
+};
+
+export function compareFn(b: Readonly<Date>): (a: Readonly<Date>) => Comparison {
+    return a => compare(a, b);
 }
