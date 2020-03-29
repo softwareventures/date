@@ -282,3 +282,11 @@ export function before(a: Readonly<Date>, b: Readonly<Date>): boolean {
 export function beforeFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
     return a => before(a, b);
 }
+
+export function beforeOrEqual(a: Readonly<Date>, b: Readonly<Date>): boolean {
+    return toReferenceDays(a) <= toReferenceDays(b);
+}
+
+export function beforeOrEqualFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
+    return a => beforeOrEqual(a, b);
+}
