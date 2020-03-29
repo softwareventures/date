@@ -274,3 +274,11 @@ export const compare: Comparator<Readonly<Date>> = (a, b) => {
 export function compareFn(b: Readonly<Date>): (a: Readonly<Date>) => Comparison {
     return a => compare(a, b);
 }
+
+export function before(a: Readonly<Date>, b: Readonly<Date>): boolean {
+    return toReferenceDays(a) < toReferenceDays(b);
+}
+
+export function beforeFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
+    return a => before(a, b);
+}
