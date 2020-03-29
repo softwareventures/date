@@ -298,3 +298,11 @@ export function after(a: Readonly<Date>, b: Readonly<Date>): boolean {
 export function afterFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
     return a => after(a, b);
 }
+
+export function afterOrEqual(a: Readonly<Date>, b: Readonly<Date>): boolean {
+    return toReferenceDays(a) >= toReferenceDays(b);
+}
+
+export function afterOrEqualFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
+    return a => afterOrEqual(a, b);
+}
