@@ -248,9 +248,7 @@ export function equalFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
 }
 
 export function notEqual(a: Readonly<Date>, b: Readonly<Date>): boolean {
-    return a.year !== b.year
-        || a.month !== b.month
-        || a.day !== b.day;
+    return toReferenceDays(a) !== toReferenceDays(b);
 }
 
 export function notEqualFn(b: Readonly<Date>): (a: Readonly<Date>) => boolean {
