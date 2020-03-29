@@ -3,6 +3,7 @@
 import {Comparator, Comparison} from "@softwareventures/ordered";
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
+import {JsDate} from "./js-date";
 
 /** An date in the Gregorian calendar, with no associated time zone. */
 export interface Date {
@@ -321,4 +322,9 @@ export function latest<T extends Readonly<Date>, U extends Readonly<Date>>(a: T,
 
 export function latestFn<T extends Readonly<Date>, U extends Readonly<Date>>(b: U): (a: T) => T | U {
     return a => latest(a, b);
+}
+
+export function todayUtc(): Date {
+    const today = new JsDate();
+    return {day: today.getUTCDate(), month: today.getUTCMonth() + 1, year: today.getUTCFullYear()};
 }
