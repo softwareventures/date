@@ -314,3 +314,11 @@ export function earliest<T extends Readonly<Date>, U extends Readonly<Date>>(a: 
 export function earliestFn<T extends Readonly<Date>, U extends Readonly<Date>>(b: U): (a: T) => T | U {
     return a => earliest(a, b);
 }
+
+export function latest<T extends Readonly<Date>, U extends Readonly<Date>>(a: T, b: U): T | U {
+    return before(a, b) ? b : a;
+}
+
+export function latestFn<T extends Readonly<Date>, U extends Readonly<Date>>(b: U): (a: T) => T | U {
+    return a => latest(a, b);
+}
