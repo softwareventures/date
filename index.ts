@@ -1,8 +1,8 @@
 /** @file Data types and functions for working with dates in the Gregorian calendar. */
 
+import {Comparator, Comparison} from "@softwareventures/ordered";
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
-import {Comparator, Comparison} from "@softwareventures/ordered";
 
 /** An date in the Gregorian calendar, with no associated time zone. */
 export interface Date {
