@@ -333,3 +333,25 @@ export function todayLocal(): Date {
     const today = new JsDate();
     return {day: today.getDate(), month: today.getMonth() + 1, year: today.getFullYear()};
 }
+
+/** Parses a Date from text in ISO 8601 format.
+ *
+ * The ISO 8601 text must not specify a time zone offset.
+ *
+ * If the specified text is not a valid ISO 8601 date then this function
+ * returns `null`.
+ *
+ * Both extended `YYYY-MM-DD` and basic `"YYYYMMDD` ISO 8601 formats are
+ * accepted. */
+export function parseIso8601(text: string): Date | null {
+    const match = /^([+-]?\d{4,})-?(\d{2})-?(\d{2})$/.exec(text);
+    if (match == null) {
+        return null;
+    }
+
+    const year = parseInt(match[1], 10);
+    const month = parseInt(match[2], 10);
+    const day = parseInt(match[3], 10);
+
+    return {day, month, year};
+}
