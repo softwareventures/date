@@ -409,10 +409,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@softwareventures/ordered@^0.2.1":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-0.2.4.tgz#f2ac71ea6db811ba0da249f1cee67ed204382b0d"
-  integrity sha512-hbR74lJsfF9g7m6aQKJC7jBofwvT71laRXvTLXnNo+MbtQXyu7t40vRmPssv6ebaG0r2kuw5sYPyr/hknqNWRg==
+"@softwareventures/ordered@^0.2.1 || ^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-1.0.0.tgz#d803eef43bb0b4ccfcd78d2928fe38b5109ad99e"
+  integrity sha512-SUFUYDWEPAS54LpGH+mRHwkGuTINPDt4OOS3h/Zr9f12JPFz2cqh6Xxwg75BZqwaeONuUwmklJVMRmgvxSSkPA==
   dependencies:
     tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
