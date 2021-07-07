@@ -2432,10 +2432,10 @@ is-installed-globally@^0.4.0:
     global-dirs "^3.0.0"
     is-path-inside "^3.0.2"
 
-"is-integer-in-range@^1.0.0 || ^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/is-integer-in-range/-/is-integer-in-range-2.0.1.tgz#7dcfc70c744635daf070903ef05915903afc37cb"
-  integrity sha512-rP+q9JXUsM52UMBOF8XIIAZ/mm//JDgsU97ef3df37bC9IriULbiSHCSbROdjs908xxoaI8HZgIvq0puYO2n6g==
+"is-integer-in-range@^1.0.0 || ^2.0.0 || ^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-integer-in-range/-/is-integer-in-range-3.0.0.tgz#23e8c8c8b22fe42b447d35f0258ac30f0b96c1a2"
+  integrity sha512-rUZ09wQ+jq1CDBqVuwOJxKWoUn7tFSF3SJacH792Ryrh+WSUlLhnPpuXVoGJizHTJyQoZn4P9n9Vk4zqNE+VMw==
   dependencies:
     "@types/is-integer" "^1.0.0"
     is-integer "^1.0.7"
