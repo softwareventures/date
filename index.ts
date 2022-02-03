@@ -76,7 +76,8 @@ export function daysInMonth(month: number, year: number): number {
     } else if (month === FEBRUARY && isLeapYear(year)) {
         return 29;
     } else {
-        return [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        return [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]!;
     }
 }
 
@@ -167,7 +168,8 @@ export function toReferenceDays(date: Partial<Readonly<Date>>): number {
         Math.floor((referenceMonths + 10) / 48) -
         Math.floor((referenceMonths + 10) / 1200) +
         Math.floor((referenceMonths + 10) / 4800) +
-        [0, 1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0][(12 + (referenceMonths % 12)) % 12] +
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        [0, 1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0][(12 + (referenceMonths % 12)) % 12]! +
         day -
         1
     );
@@ -184,7 +186,8 @@ export function fromReferenceDays(referenceDays: number): Date {
         dayInQuadricentennium === 0 ? 0 : Math.floor((dayInQuadricentennium - 1) / 36524);
     const longCentury = centuryInQuadricentennium === 0;
     const dayInCentury =
-        dayInQuadricentennium - [0, 36525, 73049, 109573][centuryInQuadricentennium];
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        dayInQuadricentennium - [0, 36525, 73049, 109573][centuryInQuadricentennium]!;
     const quadrenniumInCentury = Math.floor(
         (dayInCentury + Number(centuryInQuadricentennium !== 0)) / 1461
     );
@@ -364,7 +367,7 @@ export function todayLocal(): Date {
  * accepted. */
 export function parseIso8601(text: string): Date | null {
     const match = /^([+-]?\d{4,})-?(\d{2})-?(\d{2})$/u.exec(text);
-    if (match == null) {
+    if (match == null || match[1] == null || match[2] == null || match[3] == null) {
         return null;
     }
 
