@@ -1,4 +1,4 @@
 export type JsDate = Date;
 
-// tslint:disable-next-line:variable-name
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const JsDate = Date;

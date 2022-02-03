@@ -1,6 +1,7 @@
 /** @file Data types and functions for working with dates in the Gregorian calendar. */
 
-import {Comparator, Comparison} from "@softwareventures/ordered";
+import type {Comparator} from "@softwareventures/ordered";
+import { Comparison} from "@softwareventures/ordered";
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
 import {JsDate} from "./js-date";
@@ -26,18 +27,18 @@ export interface Date {
     year: number;
 }
 
-export const JANUARY = 1;
-export const FEBRUARY = 2;
-export const MARCH = 3;
-export const APRIL = 4;
-export const MAY = 5;
-export const JUNE = 6;
-export const JULY = 7;
-export const AUGUST = 8;
-export const SEPTEMBER = 9;
-export const OCTOBER = 10;
-export const NOVEMBER = 11;
-export const DECEMBER = 12;
+export const JANUARY = 1; // eslint-disable-line @typescript-eslint/naming-convention
+export const FEBRUARY = 2; // eslint-disable-line @typescript-eslint/naming-convention
+export const MARCH = 3; // eslint-disable-line @typescript-eslint/naming-convention
+export const APRIL = 4; // eslint-disable-line @typescript-eslint/naming-convention
+export const MAY = 5; // eslint-disable-line @typescript-eslint/naming-convention
+export const JUNE = 6; // eslint-disable-line @typescript-eslint/naming-convention
+export const JULY = 7; // eslint-disable-line @typescript-eslint/naming-convention
+export const AUGUST = 8; // eslint-disable-line @typescript-eslint/naming-convention
+export const SEPTEMBER = 9; // eslint-disable-line @typescript-eslint/naming-convention
+export const OCTOBER = 10; // eslint-disable-line @typescript-eslint/naming-convention
+export const NOVEMBER = 11; // eslint-disable-line @typescript-eslint/naming-convention
+export const DECEMBER = 12; // eslint-disable-line @typescript-eslint/naming-convention
 
 /**
  * Tests if the specified year is a leap year. Returns true if it is,
@@ -344,7 +345,7 @@ export function todayLocal(): Date {
  * Both extended `YYYY-MM-DD` and basic `"YYYYMMDD` ISO 8601 formats are
  * accepted. */
 export function parseIso8601(text: string): Date | null {
-    const match = /^([+-]?\d{4,})-?(\d{2})-?(\d{2})$/.exec(text);
+    const match = /^([+-]?\d{4,})-?(\d{2})-?(\d{2})$/u.exec(text);
     if (match == null) {
         return null;
     }
