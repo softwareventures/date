@@ -6,7 +6,7 @@ import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
 import {JsDate} from "./js-date";
 
-/** An date in the Gregorian calendar, with no associated time zone. */
+/** A date in the Gregorian calendar, with no associated time zone. */
 export interface Date {
     /** The day of the month. Should be in the range 1-31. */
     day: number;
