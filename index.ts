@@ -363,7 +363,7 @@ export function todayLocal(): Date {
  * If the specified text is not a valid ISO 8601 date then this function
  * returns `null`.
  *
- * Both extended `YYYY-MM-DD` and basic `"YYYYMMDD` ISO 8601 formats are
+ * Both extended `YYYY-MM-DD` and basic `YYYYMMDD` ISO 8601 formats are
  * accepted. */
 export function parseIso8601(text: string): Date | null {
     const match = /^([+-]?\d{4,})-?(\d{2})-?(\d{2})$/u.exec(text);
