@@ -25,6 +25,7 @@
     "node": "^14 || ^16 || >=18"
   },
   "dependencies": {
+    "@softwareventures/format-date": "^1.0.0",
     "@softwareventures/ordered": "^0.2.1 || ^1.0.0",
     "@types/is-integer": "1.0.0",
     "is-integer": "1.0.7",

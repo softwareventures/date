@@ -4,6 +4,7 @@ import type {Comparator} from "@softwareventures/ordered";
 import {Comparison} from "@softwareventures/ordered";
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
+import * as format from "@softwareventures/format-date";
 import {JsDate} from "./js-date";
 
 /** A date in the Gregorian calendar, with no associated time zone. */
@@ -377,3 +378,8 @@ export function parseIso8601(text: string): Date | null {
 
     return {day, month, year};
 }
+
+/** Formats the specified Date as IS0 8601 extended, e.g. `2021-05-01`.
+ *
+ * For other formats, see @softwareventures/format-date. */
+export const formatIso8601 = format.iso8601;
