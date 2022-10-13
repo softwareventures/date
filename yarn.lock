@@ -574,6 +574,13 @@
   dependencies:
     tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
+"@softwareventures/ordered@^0.2.1 || ^1.0.0 || ^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-2.0.0.tgz#feaee7148f6a447f96adaa169d27fd4962b4e3d4"
+  integrity sha512-NSNuBWZ8yoNwN3tBD24E+rCHktLdJFnkrVoVy0S5C6OsKZ55viy9+IsMyMnHju2mPoB/iCmzQOPgFj/eu9WpQA==
+  dependencies:
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
+
 "@softwareventures/precise-commits@2.0.24":
   version "2.0.24"
   resolved "https://registry.yarnpkg.com/@softwareventures/precise-commits/-/precise-commits-2.0.24.tgz#6cb339782b638b6519bbfb7693a2ba4bc0978a90"
