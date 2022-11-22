@@ -2927,6 +2927,15 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@^4.0.3, is-glob@~4.0.1:
     is-integer "^1.0.7"
     tslib "2.3.1"
 
+"is-integer-in-range@^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/is-integer-in-range/-/is-integer-in-range-4.0.0.tgz#da4c5c5e3949d64781e17b02467117b0b7b3992c"
+  integrity sha512-uGYq9Ql6l76NIiU2ToiDjNpvxhM+p/DIpplm95LA/2D7V36HCllnnPtTQnfioEh48FFujVhmQpMmE7wFNgp9SQ==
+  dependencies:
+    "@types/is-integer" "^1.0.0"
+    is-integer "^1.0.7"
+    tslib "2.4.0"
+
 is-integer@1.0.7, is-integer@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/is-integer/-/is-integer-1.0.7.tgz#6bde81aacddf78b659b6629d629cadc51a886d5c"
