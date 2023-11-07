@@ -685,10 +685,10 @@
   resolved "https://registry.yarnpkg.com/@types/is-integer/-/is-integer-1.0.0.tgz#8393445ad14b2b51c9ac7e91220de0efc8de2028"
   integrity sha512-AAFRQhSVYdpQgKEkUY+bMRL8yAZSq7h7AY14iSK1xod4wOdH4Gc/KMAR4tlSo9Sf5KsYizWwlJOnLCbet5AU2A==
 
-"@types/is-integer@1.0.1", "@types/is-integer@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@types/is-integer/-/is-integer-1.0.1.tgz#c2419a1b62f5832e20951d299133395ac30f348f"
-  integrity sha512-SaUlxmTmK1/40shrrh1Rn1KrBONmUQKFgjytJ3r+ewqk9bpXySOvwiMfGF/O9O4SRidGKnqJgqREYVRDEitFAQ==
+"@types/is-integer@1.0.2", "@types/is-integer@^1.0.0":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/is-integer/-/is-integer-1.0.2.tgz#6ea8acb26466344004867743ab18de2289b0afc1"
+  integrity sha512-vf5QKHpLtM0zxUdHLEOPYwTRYSHFJE7ECkpNAnq06eHAfK1O6ANdsefd9Qbu/0OUcdh67/D5GT/ZXitT9YNXbA==
 
 "@types/json-schema@^7.0.9":
   version "7.0.14"

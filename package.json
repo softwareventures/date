@@ -27,7 +27,7 @@
   "dependencies": {
     "@softwareventures/format-date": "^1.0.0",
     "@softwareventures/ordered": "^0.2.1 || ^1.0.0 || ^2.0.0",
-    "@types/is-integer": "1.0.1",
+    "@types/is-integer": "1.0.2",
     "is-integer": "1.0.7",
     "is-integer-in-range": "^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0",
     "tslib": "^1.9.3 || ^2.0.0 || ^2.1.0"
