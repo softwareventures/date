@@ -263,7 +263,7 @@ export const validateDate = validate;
  * roll over into the next month or year.
  */
 export function date(date: DateOptions): Date {
-    return normalize(date);
+    return fromReferenceDays(toReferenceDays(date));
 }
 
 /**
@@ -272,10 +272,12 @@ export function date(date: DateOptions): Date {
  *
  * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
+ *
+ * Alias of {@link date}. Calling the function by this name instead might make
+ * code clearer in cases where the purpose is to normalize an existing `Date`
+ * object.
  */
-export function normalize(date: DateOptions): Date {
-    return fromReferenceDays(toReferenceDays(date));
-}
+export const normalize = date;
 
 /**
  * Normalizes the specified {@link Date} object so that it represents a valid date.
@@ -283,7 +285,9 @@ export function normalize(date: DateOptions): Date {
  * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
  *
- * Alias of {@link normalize}.
+ * Alias of {@link date}. Calling the function by this name instead might make
+ * code clearer in cases where the purpose is to normalize an existing `Date`
+ * object.
  */
 export const normalizeDate = normalize;
 
