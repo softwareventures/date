@@ -372,16 +372,34 @@ export function equalFn(b: DateOptions): (a: DateOptions) => boolean {
  */
 export const datesEqualFn = equalFn;
 
+/**
+ * Returns `true` if `a` and `b` refer to different dates.
+ */
 export function notEqual(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) !== toReferenceDays(b);
 }
 
+/**
+ * Returns `true` if `a` and `b` refer to different dates.
+ *
+ * Alias of `notEqual`, for disambiguation from other inequality functions.
+ */
 export const datesNotEqual = notEqual;
 
+/**
+ * Returns `true` if `a` and `b` refer to different dates.
+ *
+ * Curried variant of `notEqual`.
+ */
 export function notEqualFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => notEqual(a, b);
 }
 
+/**
+ * Returns `true` if `a` and `b` refer to different dates.
+ *
+ * Curried variant of `datesNotEqual`.
+ */
 export const datesNotEqualFn = notEqualFn;
 
 export const compare: Comparator<DateOptions> = (a, b) => {
