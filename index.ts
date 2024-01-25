@@ -209,7 +209,8 @@ export function isValid(date: DateOptions): boolean {
  *
  * Dates returned by functions in this library are always valid.
  *
- * Alias of {@link isValid}.
+ * Alias of {@link isValid}, useful for disambiguation from similar functions
+ * that operate on other types.
  */
 export const dateIsValid = isValid;
 
