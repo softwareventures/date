@@ -1058,6 +1058,7 @@ __metadata:
     ts-node: "npm:10.9.2"
     tslib: "npm:^2.1.0"
     typescript: "npm:5.3.3"
+    unknown: "npm:^0.2.5"
   languageName: unknown
   linkType: soft
 
@@ -7991,7 +7992,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unknown@npm:0.2.5":
+"unknown@npm:0.2.5, unknown@npm:^0.2.5":
   version: 0.2.5
   resolution: "unknown@npm:0.2.5"
   checksum: 8313b382826aafea3363e9698032db31093435d572271faea03c7a2d527e47626f0464c4594d999b1c025d038b26d5f7315e36cb001ed1697c3c14771d0b5322

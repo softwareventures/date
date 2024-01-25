@@ -5,6 +5,7 @@ import {Comparison} from "@softwareventures/ordered";
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
 import * as format from "@softwareventures/format-date";
+import {hasProperty} from "unknown";
 import {JsDate} from "./js-date";
 
 /** A date in the Gregorian calendar, with no associated time zone. */
@@ -98,11 +99,11 @@ export function isDate(value: unknown): value is Date {
     return (
         typeof value === "object" &&
         value != null &&
-        "year" in value &&
-        typeof (value as {year: unknown}).year === "number" &&
-        "month" in value &&
-        typeof (value as {month: unknown}).month === "number" &&
-        "day" in value &&
+        hasProperty(value, "year") &&
+        typeof value.year === "number" &&
+        hasProperty(value, "month") &&
+        typeof value.month === "number" &&
+        hasProperty(value, "day") &&
         typeof (value as {day: unknown}).day === "number"
     );
 }
