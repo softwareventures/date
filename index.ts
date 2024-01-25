@@ -154,6 +154,8 @@ export function isDate(value: unknown): value is Date {
  *
  * Returns `true` if the value has the shape of a `Date` object and the `year`,
  * `month`, and `day` fields are all integers inside the valid range.
+ *
+ * Dates returned by functions in this library are always valid.
  */
 export function isValidDate(value: unknown): value is Date {
     return isDate(value) && isValid(value);
@@ -164,6 +166,8 @@ export function isValidDate(value: unknown): value is Date {
  *
  * Returns `true` if the `year`, `month` and `day` fields are all integers inside the
  * valid range.
+ *
+ * Dates returned by functions in this library are always valid.
  */
 export function isValid(date: DateOptions): boolean {
     return (
@@ -180,12 +184,16 @@ export function isValid(date: DateOptions): boolean {
  * Returns `true` if the `year`, `month` and `day` fields are all integers
  * inside the valid range.
  *
+ * Dates returned by functions in this library are always valid.
+ *
  * Alias for {@link isValid}.
  */
 export const dateIsValid = isValid;
 
 /**
  * Asserts that the specified {@link Date} object represents a valid date.
+ *
+ * Dates returned by functions in this library are always valid.
  *
  * @throws {Error} if any of the `year`, `month` or `day` fields are
  *   non-integers or outside the valid range.
@@ -198,6 +206,8 @@ export function validate(date: DateOptions): void {
 
 /**
  * Asserts that the specified {@link Date} object represents a valid date.
+ *
+ * Dates returned by functions in this library are always valid.
  *
  * Alias for {@link validate}.
  *
