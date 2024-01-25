@@ -130,8 +130,8 @@ export function daysInMonth(month: number, year: number): number {
  * The `year`, `month` and `day` fields may be non-integers or outside the
  * valid range, meaning that the object may not represent a valid date.
  *
- * To also test that the `year`, `month` and `day` fields are integers within
- * the valid range, use {@link isValidDate} instead.
+ * To test if the object represents a valid date, call {@link isValid} or
+ * {@link isValidDate}.
  */
 export function isDate(value: unknown): value is Date {
     return (
