@@ -36,7 +36,7 @@ export interface Date {
 /**
  * Options required to construct a `Date`.
  *
- * An existing {@link Date} object may be used in place of `DateOptions`.
+ * An instance of {@link Date} may always be used in place of `DateOptions`.
  */
 export interface DateOptions {
     /**
