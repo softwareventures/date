@@ -321,8 +321,13 @@ export function toReferenceDays(date: Partial<DateOptions>): number {
 /**
  *  Creates a {@link Date} corresponding to the specified count of the number
  *  of days since the reference date of 1st January, 1 CE.
+ *
+ *  @throws {Error} if `referenceDays` is non-finite.
  */
 export function fromReferenceDays(referenceDays: number): Date {
+    if (!isFinite(referenceDays)) {
+        throw new Error("Invalid date");
+    }
     const rd = Math.floor(referenceDays);
     const quadricentennium = Math.floor((rd + 366) / 146097);
     const dayInQuadricentennium = rd + 366 - quadricentennium * 146097;
