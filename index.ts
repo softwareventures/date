@@ -691,6 +691,20 @@ export function parseIso8601(text: string): Date | null {
     return {type: "Date", day, month, year};
 }
 
+/**
+ * Parses a {@link Date} from text in ISO 8601 format.
+ *
+ * The ISO 8601 text must not specify a time zone offset.
+ *
+ * If the specified text is not a valid ISO 8601 date then this function
+ * returns `null`.
+ *
+ * Both extended `YYYY-MM-DD` and basic `YYYYMMDD` ISO 8601 formats are
+ * accepted.
+ *
+ * Alias of {@link parseIso8601}, useful for disambiguation from similar
+ * functions that operate on other date/time types.
+ */
 export const parseDateIso8601 = parseIso8601;
 
 /**
