@@ -540,16 +540,35 @@ export function afterFn(b: DateOptions): (a: DateOptions) => boolean {
  */
 export const dateAfterFn = afterFn;
 
+/**
+ * Returns `true` if `a` refers to a date after or the same as `b`.
+ */
 export function afterOrEqual(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) >= toReferenceDays(b);
 }
 
+/**
+ * Returns `true` if `a` refers to a date after or the same as `b`.
+ *
+ * Alias of `afterOrEqual`, useful for disambiguation from similar functions
+ * that operate on other date/time types.
+ */
 export const dateAfterOrEqual = afterOrEqual;
 
+/**
+ * Returns `true` if `a` refers to a date after or the same as `b`.
+ *
+ * Curried variant of `afterOrEqual`.
+ */
 export function afterOrEqualFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => afterOrEqual(a, b);
 }
 
+/**
+ * Returns `true` if `a` refers to a date after or the same as `b`.
+ *
+ * Curried variant of `dateAfterOrEqual`.
+ */
 export const dateAfterOrEqualFn = afterOrEqualFn;
 
 export function earliest<T extends DateOptions, U extends DateOptions>(a: T, b: U): T | U {
