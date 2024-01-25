@@ -212,6 +212,21 @@ export function isValid(date: DateOptions): boolean {
  * Alias of {@link isValid}, useful for disambiguation from similar functions
  * that operate on other types.
  */
+export const isDateValid = isValid;
+
+/**
+ * Tests if the specified {@link Date} object represents a valid date.
+ *
+ * Returns `true` if the `year`, `month` and `day` fields are all integers
+ * inside the valid range.
+ *
+ * Dates returned by functions in this library are always valid.
+ *
+ * Alias of {@link isValid}, useful for disambiguation from similar functions
+ * that operate on other types.
+ *
+ * @deprecated Use {@link isDateValid} instead.
+ */
 export const dateIsValid = isValid;
 
 /**
