@@ -602,16 +602,35 @@ export function earliestFn<T extends DateOptions, U extends DateOptions>(b: U): 
  */
 export const earliestDateFn = earliestFn;
 
+/**
+ * Compares two dates and returns the later of the two.
+ */
 export function latest<T extends DateOptions, U extends DateOptions>(a: T, b: U): T | U {
     return before(a, b) ? b : a;
 }
 
+/**
+ * Compares two dates and returns the later of the two.
+ *
+ * Alias of `latest`, useful for disambiguation from similar functions that
+ * operate on other date/time types.
+ */
 export const latestDate = latest;
 
+/**
+ * Compares two dates and returns the later of the two.
+ *
+ * Curried variant of `latest`.
+ */
 export function latestFn<T extends DateOptions, U extends DateOptions>(b: U): (a: T) => T | U {
     return a => latest(a, b);
 }
 
+/**
+ * Compares two dates and returns the later of the two.
+ *
+ * Curried variant of `latestDate`.
+ */
 export const latestDateFn = latestFn;
 
 export function todayUtc(): Date {
