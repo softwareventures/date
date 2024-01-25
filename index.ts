@@ -714,4 +714,12 @@ export const parseDateIso8601 = parseIso8601;
  */
 export const formatIso8601 = format.iso8601;
 
+/**
+ * Formats the specified Date as IS0 8601 extended, e.g. `2021-05-01`.
+ *
+ * For other formats, see `@softwareventures/format-date`.
+ *
+ * Alias of {@link formatIso8601}, useful for disambiguation from similar
+ * functions that operate on other date/time types.
+ */
 export const formatDateIso8601 = format.iso8601;
