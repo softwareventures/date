@@ -323,8 +323,9 @@ export function toReferenceDays(date: Partial<DateOptions>): number {
  *  of days since the reference date of 1st January, 1 CE.
  */
 export function fromReferenceDays(referenceDays: number): Date {
-    const quadricentennium = Math.floor((referenceDays + 366) / 146097);
-    const dayInQuadricentennium = referenceDays + 366 - quadricentennium * 146097;
+    const rd = Math.floor(referenceDays);
+    const quadricentennium = Math.floor((rd + 366) / 146097);
+    const dayInQuadricentennium = rd + 366 - quadricentennium * 146097;
     const centuryInQuadricentennium =
         dayInQuadricentennium === 0 ? 0 : Math.floor((dayInQuadricentennium - 1) / 36524);
     const longCentury = centuryInQuadricentennium === 0;
