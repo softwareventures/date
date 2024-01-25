@@ -447,16 +447,35 @@ export function compareFn(b: DateOptions): (a: DateOptions) => Comparison {
  */
 export const compareDatesFn = compareFn;
 
+/**
+ * Returns `true` if `a` refers to a date before `b`.
+ */
 export function before(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) < toReferenceDays(b);
 }
 
+/**
+ * Returns `true` if `a` refers to a date before `b`.
+ *
+ * Alias of `before`, useful for disambiguation from similar functions that
+ * operate on other date/time types.
+ */
 export const dateBefore = before;
 
+/**
+ * Returns `true` if `a` refers to a date before `b`.
+ *
+ * Curried variant of `before`.
+ */
 export function beforeFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => before(a, b);
 }
 
+/**
+ * Returns `true` if `a` refers to a date before `b`.
+ *
+ * Curried variant of `dateBefore`.
+ */
 export const dateBeforeFn = beforeFn;
 
 export function beforeOrEqual(a: DateOptions, b: DateOptions): boolean {
