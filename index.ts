@@ -571,16 +571,35 @@ export function afterOrEqualFn(b: DateOptions): (a: DateOptions) => boolean {
  */
 export const dateAfterOrEqualFn = afterOrEqualFn;
 
+/**
+ * Compares two dates and returns the earlier of the two.
+ */
 export function earliest<T extends DateOptions, U extends DateOptions>(a: T, b: U): T | U {
     return after(a, b) ? b : a;
 }
 
+/**
+ * Compares two dates and returns the earlier of the two.
+ *
+ * Alias of `earliest`, useful for disambiguation from similar functions that
+ * operate on other date/time types.
+ */
 export const earliestDate = earliest;
 
+/**
+ * Compares two dates and returns the earlier of the two.
+ *
+ * Curried variant of `earliest`.
+ */
 export function earliestFn<T extends DateOptions, U extends DateOptions>(b: U): (a: T) => T | U {
     return a => earliest(a, b);
 }
 
+/**
+ * Compares two dates and returns the earlier of the two.
+ *
+ * Curried variant of `earliestDate`.
+ */
 export const earliestDateFn = earliestFn;
 
 export function latest<T extends DateOptions, U extends DateOptions>(a: T, b: U): T | U {
