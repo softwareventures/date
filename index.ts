@@ -722,8 +722,8 @@ export function todayDeviceLocal(): Date {
  * Alias of {@link todayDeviceLocal}, retained for backwards compatibility.
  *
  * @deprecated Use {@link todayDeviceLocal} instead. This function has been
- * renamed to make it clear that the timezone used is the local timezone as
- * reported by the device.
+ *   renamed to make it clear that the timezone used is the local timezone as
+ *   reported by the device.
  */
 export const todayLocal = todayDeviceLocal;
 
