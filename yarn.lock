@@ -67,12 +67,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:17.8.1":
-  version: 17.8.1
-  resolution: "@commitlint/config-conventional@npm:17.8.1"
+"@commitlint/config-conventional@npm:18.5.0":
+  version: 18.5.0
+  resolution: "@commitlint/config-conventional@npm:18.5.0"
   dependencies:
-    conventional-changelog-conventionalcommits: "npm:^6.1.0"
-  checksum: 70abdc9f1361386060b30620decc376bc33ff0c27c6f2f89511df1d53127d238af7c3409db22651282caa614d54b91b1f5e35905d12b1f5db70603c351f6e482
+    conventional-changelog-conventionalcommits: "npm:^7.0.2"
+  checksum: ef244dc8cec3e0150a2014621b82fa6d7042d2821b0e4f65712bdcee0678718688878c9e45a8bfe9852c9aef25d6569176734178e4e4aa0e0aeb52a361e50475
   languageName: node
   linkType: hard
 
@@ -1027,7 +1027,7 @@ __metadata:
   resolution: "@softwareventures/date@workspace:."
   dependencies:
     "@commitlint/cli": "npm:17.8.1"
-    "@commitlint/config-conventional": "npm:17.8.1"
+    "@commitlint/config-conventional": "npm:18.5.0"
     "@commitlint/cz-commitlint": "npm:17.8.1"
     "@softwareventures/eslint-config": "npm:7.1.4"
     "@softwareventures/format-date": "npm:^1.0.0"
@@ -2418,21 +2418,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-conventionalcommits@npm:7.0.2":
+"conventional-changelog-conventionalcommits@npm:7.0.2, conventional-changelog-conventionalcommits@npm:^7.0.2":
   version: 7.0.2
   resolution: "conventional-changelog-conventionalcommits@npm:7.0.2"
   dependencies:
     compare-func: "npm:^2.0.0"
   checksum: 3cb1eab35e37fc973cfb3aed0e159f54414e49b222988da1c2aa86cc8a87fe7531491bbb7657fe5fc4dc0e25f5b50e2065ba8ac71cc4c08eed9189102a2b81bd
-  languageName: node
-  linkType: hard
-
-"conventional-changelog-conventionalcommits@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "conventional-changelog-conventionalcommits@npm:6.1.0"
-  dependencies:
-    compare-func: "npm:^2.0.0"
-  checksum: b313f5c0160d109f58d976566e1331ede3a25ab19fbf43f86763b280659195de00a68551f7f3930bf1cbf39a5e707d94f2a25b79996e59043fa9ee0bed68a79f
   languageName: node
   linkType: hard
 
