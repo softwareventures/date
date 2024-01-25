@@ -342,16 +342,34 @@ export function fromReferenceDays(referenceDays: number): Date {
     return {type: "Date", day, month, year};
 }
 
+/**
+ * Returns `true` if `a` and `b` refer to the same date.
+ */
 export function equal(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) === toReferenceDays(b);
 }
 
+/**
+ * Returns `true` if `a` and `b` refer to the same date.
+ *
+ * Alias of `equal`, for disambiguation from other equality functions.
+ */
 export const datesEqual = equal;
 
+/**
+ * Returns `true` if `a` and `b` refer to the same date.
+ *
+ * Curried variant of `equal`.
+ */
 export function equalFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => equal(a, b);
 }
 
+/**
+ * Returns `true` if `a` and `b` refer to the same date.
+ *
+ * Curried variant of `datesEqual`.
+ */
 export const datesEqualFn = equalFn;
 
 export function notEqual(a: DateOptions, b: DateOptions): boolean {
