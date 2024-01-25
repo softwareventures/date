@@ -646,6 +646,9 @@ export function todayUtc(): Date {
     };
 }
 
+/**
+ * Returns today's date, according to the device's local timezone.
+ */
 export function todayLocal(): Date {
     const today = new JsDate();
     return {
