@@ -67,17 +67,40 @@ export interface DateOptions {
     readonly year: number;
 }
 
+/** The numeric representation of the month of January. */
 export const JANUARY = 1; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of February. */
 export const FEBRUARY = 2; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of March. */
 export const MARCH = 3; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of April. */
 export const APRIL = 4; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of May. */
 export const MAY = 5; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of June. */
 export const JUNE = 6; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of July. */
 export const JULY = 7; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of August. */
 export const AUGUST = 8; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of September. */
 export const SEPTEMBER = 9; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of October. */
 export const OCTOBER = 10; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of November. */
 export const NOVEMBER = 11; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of December. */
 export const DECEMBER = 12; // eslint-disable-line @typescript-eslint/naming-convention
 
 /**
