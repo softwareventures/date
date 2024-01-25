@@ -33,6 +33,9 @@
     "tslib": "^2.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.8.1",
+    "@commitlint/config-conventional": "17.8.1",
+    "@commitlint/cz-commitlint": "17.8.1",
     "@softwareventures/eslint-config": "7.1.4",
     "@softwareventures/precise-commits": "3.0.33",
     "@softwareventures/prettier-config": "4.0.0",
@@ -41,7 +44,7 @@
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "ava": "5.3.1",
-    "cz-conventional-changelog": "3.3.0",
+    "commitizen": "4.3.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
@@ -49,6 +52,7 @@
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-sonarjs": "0.23.0",
     "husky": "8.0.3",
+    "inquirer": "8.2.6",
     "prettier": "2.8.8",
     "semantic-release": "19.0.5",
     "ts-node": "10.9.2",
@@ -61,7 +65,7 @@
   "prettier": "@softwareventures/prettier-config",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/@commitlint/cz-commitlint"
     }
   },
   "ava": {
