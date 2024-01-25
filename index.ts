@@ -667,7 +667,7 @@ export function todayUtc(): Date {
 /**
  * Returns today's date, according to the device's local timezone.
  */
-export function todayLocal(): Date {
+export function todayDeviceLocal(): Date {
     const today = new JsDate();
     return {
         type: "Date",
@@ -676,6 +676,17 @@ export function todayLocal(): Date {
         year: today.getFullYear()
     };
 }
+
+/**
+ * Returns today's date, according to the device's local timezone.
+ *
+ * Alias of {@link todayDeviceLocal}, retained for backwards compatibility.
+ *
+ * @deprecated Use {@link todayDeviceLocal} instead. This function has been
+ * renamed to make it clear that the timezone used is the local timezone as
+ * reported by the device.
+ */
+export const todayLocal = todayDeviceLocal;
 
 /**
  * Parses a {@link Date} from text in ISO 8601 format.
