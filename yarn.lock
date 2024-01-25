@@ -86,24 +86,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cz-commitlint@npm:18.5.0":
-  version: 18.5.0
-  resolution: "@commitlint/cz-commitlint@npm:18.5.0"
+"@commitlint/cz-commitlint@npm:18.6.0":
+  version: 18.6.0
+  resolution: "@commitlint/cz-commitlint@npm:18.6.0"
   dependencies:
-    "@commitlint/ensure": "npm:^18.4.4"
-    "@commitlint/load": "npm:^18.5.0"
-    "@commitlint/types": "npm:^18.4.4"
+    "@commitlint/ensure": "npm:^18.6.0"
+    "@commitlint/load": "npm:^18.6.0"
+    "@commitlint/types": "npm:^18.6.0"
     chalk: "npm:^4.1.0"
     lodash.isplainobject: "npm:^4.0.6"
     word-wrap: "npm:^1.2.5"
   peerDependencies:
     commitizen: ^4.0.3
     inquirer: ^8.0.0
-  checksum: 306748aee0e08a5e221ac76d53811ca732e150de2e868945a8d78b1217fb54e82f08b5e3b67f7bb32abb342e50849b560b3e9d91da9ab2e709961f41f55e680b
+  checksum: e17d4c52c4b6f7193705e3eac1ccc857986d1a966384dbdbf8a94216a61b40d81785c32819e9171596ea8f18c93f0421a5a0685242e37984f797ab47b3fa7188
   languageName: node
   linkType: hard
 
-"@commitlint/ensure@npm:^18.4.4, @commitlint/ensure@npm:^18.6.0":
+"@commitlint/ensure@npm:^18.6.0":
   version: 18.6.0
   resolution: "@commitlint/ensure@npm:18.6.0"
   dependencies:
@@ -156,7 +156,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:>6.1.1, @commitlint/load@npm:^18.5.0, @commitlint/load@npm:^18.6.0":
+"@commitlint/load@npm:>6.1.1, @commitlint/load@npm:^18.6.0":
   version: 18.6.0
   resolution: "@commitlint/load@npm:18.6.0"
   dependencies:
@@ -248,7 +248,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/types@npm:^18.4.4, @commitlint/types@npm:^18.6.0":
+"@commitlint/types@npm:^18.6.0":
   version: 18.6.0
   resolution: "@commitlint/types@npm:18.6.0"
   dependencies:
@@ -1004,7 +1004,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:18.6.0"
     "@commitlint/config-conventional": "npm:18.5.0"
-    "@commitlint/cz-commitlint": "npm:18.5.0"
+    "@commitlint/cz-commitlint": "npm:18.6.0"
     "@softwareventures/eslint-config": "npm:7.1.5"
     "@softwareventures/format-date": "npm:^1.0.0"
     "@softwareventures/ordered": "npm:^0.2.1 || ^1.0.0 || ^2.0.0"
