@@ -124,16 +124,13 @@ export function daysInMonth(month: number, year: number): number {
 }
 
 /**
- * Tests if the specified value has the shape of a `Date` object.
+ * Returns `true` if the specified value has the shape of a `Date` object.
  *
- * Returns `true` if the value is an object with numeric `year`, `month` and
- * `day` fields.
+ * The `year`, `month` and `day` fields may be non-integers or outside the
+ * valid range, meaning that the object may not represent a valid date.
  *
- * The fields may be non-integers or outside the valid range, meaning that the
- * object may not represent a valid date.
- *
- * To also test that the `year`, `month`, `day` fields are integers within the
- * valid range, use {@link isValidDate} instead.
+ * To also test that the `year`, `month` and `day` fields are integers within
+ * the valid range, use {@link isValidDate} instead.
  */
 export function isDate(value: unknown): value is Date {
     return (
@@ -153,8 +150,8 @@ export function isDate(value: unknown): value is Date {
 /**
  * Tests if the specified value is a `Date` object representing a valid date.
  *
- * Returns `true` if the value is an object with a numeric `year`, `month` and
- * `day` fields and the fields are all integers inside the valid range.
+ * Returns `true` if the value has the shape of a `Date` object and the `year`,
+ * `month`, and `day` fields are all integers inside the valid range.
  */
 export function isValidDate(value: unknown): value is Date {
     return isDate(value) && isValid(value);
