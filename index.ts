@@ -312,7 +312,7 @@ export function toReferenceDays(date: Partial<DateOptions>): number {
         Math.floor((referenceMonths + 10) / 1200) +
         Math.floor((referenceMonths + 10) / 4800) +
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        [0, 1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0][(12 + (referenceMonths % 12)) % 12]! +
+        [0, 1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0][(12 + (Math.floor(referenceMonths) % 12)) % 12]! +
         day -
         1
     );
