@@ -478,16 +478,35 @@ export function beforeFn(b: DateOptions): (a: DateOptions) => boolean {
  */
 export const dateBeforeFn = beforeFn;
 
+/**
+ * Returns `true` if `a` refers to a date before or the same as `b`.
+ */
 export function beforeOrEqual(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) <= toReferenceDays(b);
 }
 
+/**
+ * Returns `true` if `a` refers to a date before or the same as `b`.
+ *
+ * Alias of `beforeOrEqual`, useful for disambiguation from similar
+ * functions that operate on other date/time types.
+ */
 export const dateBeforeOrEqual = beforeOrEqual;
 
+/**
+ * Returns `true` if `a` refers to a date before or the same as `b`.
+ *
+ * Curried variant of `beforeOrEqual`.
+ */
 export function beforeOrEqualFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => beforeOrEqual(a, b);
 }
 
+/**
+ * Returns `true` if `a` refers to a date before or the same as `b`.
+ *
+ * Curried variant of `dateBeforeOrEqual`.
+ */
 export const dateBeforeOrEqualFn = beforeOrEqualFn;
 
 export function after(a: DateOptions, b: DateOptions): boolean {
