@@ -261,6 +261,9 @@ export const validateDate = validate;
  *
  * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
+ *
+ * @throws {Error} if the `year`, `month` or `day` fields are not finite
+ *   numbers
  */
 export function date(date: DateOptions): Date {
     return fromReferenceDays(toReferenceDays(date));
@@ -276,7 +279,9 @@ export function date(date: DateOptions): Date {
  * Alias of {@link date}. Calling the function by this name instead might make
  * code clearer in cases where the purpose is to normalize an existing `Date`
  * object.
- */
+ *
+ * @throws {Error} if the `year`, `month` or `day` fields are not finite
+ *   numbers */
 export const normalize = date;
 
 /**
@@ -288,7 +293,9 @@ export const normalize = date;
  * Alias of {@link date}. Calling the function by this name instead might make
  * code clearer in cases where the purpose is to normalize an existing `Date`
  * object.
- */
+ *
+ * @throws {Error} if the `year`, `month` or `day` fields are not finite
+ *   numbers */
 export const normalizeDate = normalize;
 
 /**
