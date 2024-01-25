@@ -633,6 +633,9 @@ export function latestFn<T extends DateOptions, U extends DateOptions>(b: U): (a
  */
 export const latestDateFn = latestFn;
 
+/**
+ * Returns today's date, UTC.
+ */
 export function todayUtc(): Date {
     const today = new JsDate();
     return {
