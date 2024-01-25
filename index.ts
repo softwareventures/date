@@ -170,6 +170,16 @@ export function isValid(date: DateOptions): boolean {
 }
 
 /**
+ * Tests if the specified Date object represents a valid date.
+ *
+ * Returns true if the year, month and day fields are all integers inside the
+ * valid range.
+ *
+ * Alias for `isValid`.
+ */
+export const dateIsValid = isValid;
+
+/**
  * Asserts that the specified Date object represents a valid date.
  *
  * @throws {Error} if any of the year, month or day fields are non-integers or
@@ -180,6 +190,16 @@ export function validate(date: DateOptions): void {
         throw new Error("Invalid date");
     }
 }
+
+/**
+ * Asserts that the specified Date object represents a valid date.
+ *
+ * Alias for `validate`.
+ *
+ * @throws {Error} if any of the year, month or day fields are non-integers or
+ *   outside the valid range.
+ */
+export const validateDate = validate;
 
 /**
  * Constructs a normalized date object from the specified year, month and day.
@@ -200,6 +220,16 @@ export function date(date: DateOptions): Date {
 export function normalize(date: DateOptions): Date {
     return fromReferenceDays(toReferenceDays(date));
 }
+
+/**
+ * Normalizes the specified date object so that it represents a valid date.
+ *
+ * If the month or day fields are outside the valid range, then they will
+ * roll over into the next month or year.
+ *
+ * Alias for `normalize`.
+ */
+export const normalizeDate = normalize;
 
 /**
  * Converts the specified date to a count of the number of days since the
@@ -316,17 +346,25 @@ export function equal(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) === toReferenceDays(b);
 }
 
+export const datesEqual = equal;
+
 export function equalFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => equal(a, b);
 }
+
+export const datesEqualFn = equalFn;
 
 export function notEqual(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) !== toReferenceDays(b);
 }
 
+export const datesNotEqual = notEqual;
+
 export function notEqualFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => notEqual(a, b);
 }
+
+export const datesNotEqualFn = notEqualFn;
 
 export const compare: Comparator<DateOptions> = (a, b) => {
     const ad = toReferenceDays(a);
@@ -343,57 +381,85 @@ export const compare: Comparator<DateOptions> = (a, b) => {
     }
 };
 
+export const compareDates = compare;
+
 export function compareFn(b: DateOptions): (a: DateOptions) => Comparison {
     return a => compare(a, b);
 }
+
+export const compareDatesFn = compareFn;
 
 export function before(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) < toReferenceDays(b);
 }
 
+export const dateBefore = before;
+
 export function beforeFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => before(a, b);
 }
+
+export const dateBeforeFn = beforeFn;
 
 export function beforeOrEqual(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) <= toReferenceDays(b);
 }
 
+export const dateBeforeOrEqual = beforeOrEqual;
+
 export function beforeOrEqualFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => beforeOrEqual(a, b);
 }
+
+export const dateBeforeOrEqualFn = beforeOrEqualFn;
 
 export function after(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) > toReferenceDays(b);
 }
 
+export const dateAfter = after;
+
 export function afterFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => after(a, b);
 }
+
+export const dateAfterFn = afterFn;
 
 export function afterOrEqual(a: DateOptions, b: DateOptions): boolean {
     return toReferenceDays(a) >= toReferenceDays(b);
 }
 
+export const dateAfterOrEqual = afterOrEqual;
+
 export function afterOrEqualFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => afterOrEqual(a, b);
 }
+
+export const dateAfterOrEqualFn = afterOrEqualFn;
 
 export function earliest<T extends DateOptions, U extends DateOptions>(a: T, b: U): T | U {
     return after(a, b) ? b : a;
 }
 
+export const earliestDate = earliest;
+
 export function earliestFn<T extends DateOptions, U extends DateOptions>(b: U): (a: T) => T | U {
     return a => earliest(a, b);
 }
+
+export const earliestDateFn = earliestFn;
 
 export function latest<T extends DateOptions, U extends DateOptions>(a: T, b: U): T | U {
     return before(a, b) ? b : a;
 }
 
+export const latestDate = latest;
+
 export function latestFn<T extends DateOptions, U extends DateOptions>(b: U): (a: T) => T | U {
     return a => latest(a, b);
 }
+
+export const latestDateFn = latestFn;
 
 export function todayUtc(): Date {
     const today = new JsDate();
@@ -437,7 +503,11 @@ export function parseIso8601(text: string): Date | null {
     return {type: "Date", day, month, year};
 }
 
+export const parseDateIso8601 = parseIso8601;
+
 /** Formats the specified Date as IS0 8601 extended, e.g. `2021-05-01`.
  *
  * For other formats, see @softwareventures/format-date. */
 export const formatIso8601 = format.iso8601;
+
+export const formatDateIso8601 = format.iso8601;
