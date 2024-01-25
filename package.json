@@ -18,7 +18,6 @@
     "lint": "tsc --noEmit && eslint . && prettier --check .",
     "prepack": "tsc && pinst --disable",
     "postpack": "pinst --enable",
-    "semantic-release": "semantic-release",
     "test": "ava"
   },
   "sideEffects": false,
