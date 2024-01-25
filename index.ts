@@ -402,6 +402,10 @@ export function notEqualFn(b: DateOptions): (a: DateOptions) => boolean {
  */
 export const datesNotEqualFn = notEqualFn;
 
+/**
+ * Compares two dates and returns a `Comparison` specifying if `a` is before,
+ * equal to, or after `b`.
+ */
 export const compare: Comparator<DateOptions> = (a, b) => {
     const ad = toReferenceDays(a);
     const bd = toReferenceDays(b);
@@ -417,12 +421,30 @@ export const compare: Comparator<DateOptions> = (a, b) => {
     }
 };
 
+/**
+ * Compares two dates and returns a `Comparison` specifying if `a` is before,
+ * equal to, or after `b`.
+ *
+ * Alias of `compare`, useful for disambiguation from other comparison functions.
+ */
 export const compareDates = compare;
 
+/**
+ * Compares two dates and returns a `Comparison` specifying if `a` is before,
+ * equal to, or after `b`.
+ *
+ * Curried variant of `compare`.
+ */
 export function compareFn(b: DateOptions): (a: DateOptions) => Comparison {
     return a => compare(a, b);
 }
 
+/**
+ * Compares two dates and returns a `Comparison` specifying if `a` is before,
+ * equal to, or after `b`.
+ *
+ * Curried variant of `compareDates`.
+ */
 export const compareDatesFn = compareFn;
 
 export function before(a: DateOptions, b: DateOptions): boolean {
