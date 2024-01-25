@@ -36,7 +36,7 @@ export interface Date {
 /**
  * Options required to construct a `Date`.
  *
- * An existing `Date` object may be used in place of `DateOptions`.
+ * An existing {@link Date} object may be used in place of `DateOptions`.
  */
 export interface DateOptions {
     /**
@@ -124,7 +124,8 @@ export function daysInMonth(month: number, year: number): number {
 }
 
 /**
- * Returns `true` if the specified value has the shape of a `Date` object.
+ * Returns `true` if the specified value has the shape of a {@link Date}
+ * object.
  *
  * The `year`, `month` and `day` fields may be non-integers or outside the
  * valid range, meaning that the object may not represent a valid date.
@@ -148,7 +149,8 @@ export function isDate(value: unknown): value is Date {
 }
 
 /**
- * Tests if the specified value is a `Date` object representing a valid date.
+ * Tests if the specified value is a {@link Date} object representing a valid
+ * date.
  *
  * Returns `true` if the value has the shape of a `Date` object and the `year`,
  * `month`, and `day` fields are all integers inside the valid range.
@@ -158,7 +160,7 @@ export function isValidDate(value: unknown): value is Date {
 }
 
 /**
- * Tests if the specified `Date` object represents a valid date.
+ * Tests if the specified {@link Date} object represents a valid date.
  *
  * Returns `true` if the `year`, `month` and `day` fields are all integers inside the
  * valid range.
@@ -173,17 +175,17 @@ export function isValid(date: DateOptions): boolean {
 }
 
 /**
- * Tests if the specified `Date` object represents a valid date.
+ * Tests if the specified {@link Date} object represents a valid date.
  *
  * Returns `true` if the `year`, `month` and `day` fields are all integers
  * inside the valid range.
  *
- * Alias for `isValid`.
+ * Alias for {@link isValid}.
  */
 export const dateIsValid = isValid;
 
 /**
- * Asserts that the specified `Date` object represents a valid date.
+ * Asserts that the specified {@link Date} object represents a valid date.
  *
  * @throws {Error} if any of the `year`, `month` or `day` fields are
  *   non-integers or outside the valid range.
@@ -195,9 +197,9 @@ export function validate(date: DateOptions): void {
 }
 
 /**
- * Asserts that the specified `Date` object represents a valid date.
+ * Asserts that the specified {@link Date} object represents a valid date.
  *
- * Alias for `validate`.
+ * Alias for {@link validate}.
  *
  * @throws {Error} if any of the `year`, `month` or `day` fields are
  *   non-integers or outside the valid range.
@@ -205,8 +207,8 @@ export function validate(date: DateOptions): void {
 export const validateDate = validate;
 
 /**
- * Constructs a normalized `Date` object from the specified `year`, `month`
- * and `day`.
+ * Constructs a normalized {@link Date} object from the specified `year`,
+ * `month` and `day`.
  *
  * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
@@ -216,7 +218,8 @@ export function date(date: DateOptions): Date {
 }
 
 /**
- * Normalizes the specified `Date` object so that it represents a valid date.
+ * Normalizes the specified {@link Date} object so that it represents a valid
+ * date.
  *
  * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
@@ -226,17 +229,17 @@ export function normalize(date: DateOptions): Date {
 }
 
 /**
- * Normalizes the specified `Date` object so that it represents a valid date.
+ * Normalizes the specified {@link Date} object so that it represents a valid date.
  *
  * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
  *
- * Alias for `normalize`.
+ * Alias for {@link normalize}.
  */
 export const normalizeDate = normalize;
 
 /**
- * Converts the specified `Date` to a count of the number of days since the
+ * Converts the specified {@link Date} to a count of the number of days since the
  * reference date of 1st January, 1 CE.
  */
 export function toReferenceDays(date: Partial<DateOptions>): number {
@@ -263,8 +266,8 @@ export function toReferenceDays(date: Partial<DateOptions>): number {
 }
 
 /**
- *  Creates a `Date` corresponding to the specified count of the number of days
- *  since the reference date of 1st January, 1 CE.
+ *  Creates a {@link Date} corresponding to the specified count of the number
+ *  of days since the reference date of 1st January, 1 CE.
  */
 export function fromReferenceDays(referenceDays: number): Date {
     const quadricentennium = Math.floor((referenceDays + 366) / 146097);
@@ -356,14 +359,14 @@ export function equal(a: DateOptions, b: DateOptions): boolean {
 /**
  * Returns `true` if `a` and `b` refer to the same date.
  *
- * Alias of `equal`, for disambiguation from other equality functions.
+ * Alias of {@link equal}, for disambiguation from other equality functions.
  */
 export const datesEqual = equal;
 
 /**
  * Returns `true` if `a` and `b` refer to the same date.
  *
- * Curried variant of `equal`.
+ * Curried variant of {@link equal}.
  */
 export function equalFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => equal(a, b);
@@ -372,7 +375,7 @@ export function equalFn(b: DateOptions): (a: DateOptions) => boolean {
 /**
  * Returns `true` if `a` and `b` refer to the same date.
  *
- * Curried variant of `datesEqual`.
+ * Curried variant of {@link datesEqual}.
  */
 export const datesEqualFn = equalFn;
 
@@ -386,14 +389,14 @@ export function notEqual(a: DateOptions, b: DateOptions): boolean {
 /**
  * Returns `true` if `a` and `b` refer to different dates.
  *
- * Alias of `notEqual`, for disambiguation from other inequality functions.
+ * Alias of {@link notEqual}, for disambiguation from other inequality functions.
  */
 export const datesNotEqual = notEqual;
 
 /**
  * Returns `true` if `a` and `b` refer to different dates.
  *
- * Curried variant of `notEqual`.
+ * Curried variant of {@link notEqual}.
  */
 export function notEqualFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => notEqual(a, b);
@@ -402,13 +405,13 @@ export function notEqualFn(b: DateOptions): (a: DateOptions) => boolean {
 /**
  * Returns `true` if `a` and `b` refer to different dates.
  *
- * Curried variant of `datesNotEqual`.
+ * Curried variant of {@link datesNotEqual}.
  */
 export const datesNotEqualFn = notEqualFn;
 
 /**
- * Compares two dates and returns a `Comparison` specifying if `a` is before,
- * equal to, or after `b`.
+ * Compares two dates and returns a {@link Comparison} specifying if `a` is
+ * before, equal to, or after `b`.
  */
 export const compare: Comparator<DateOptions> = (a, b) => {
     const ad = toReferenceDays(a);
@@ -426,28 +429,29 @@ export const compare: Comparator<DateOptions> = (a, b) => {
 };
 
 /**
- * Compares two dates and returns a `Comparison` specifying if `a` is before,
- * equal to, or after `b`.
+ * Compares two dates and returns a {@link Comparison} specifying if `a` is
+ * before, equal to, or after `b`.
  *
- * Alias of `compare`, useful for disambiguation from other comparison functions.
+ * Alias of {@link compare}, useful for disambiguation from other comparison
+ * functions.
  */
 export const compareDates = compare;
 
 /**
- * Compares two dates and returns a `Comparison` specifying if `a` is before,
- * equal to, or after `b`.
+ * Compares two dates and returns a {@link Comparison} specifying if `a` is
+ * before, equal to, or after `b`.
  *
- * Curried variant of `compare`.
+ * Curried variant of {@link compare}.
  */
 export function compareFn(b: DateOptions): (a: DateOptions) => Comparison {
     return a => compare(a, b);
 }
 
 /**
- * Compares two dates and returns a `Comparison` specifying if `a` is before,
+ * Compares two dates and returns a {@link Comparison} specifying if `a` is before,
  * equal to, or after `b`.
  *
- * Curried variant of `compareDates`.
+ * Curried variant of {@link compareDates}.
  */
 export const compareDatesFn = compareFn;
 
@@ -461,15 +465,15 @@ export function before(a: DateOptions, b: DateOptions): boolean {
 /**
  * Returns `true` if `a` refers to a date before `b`.
  *
- * Alias of `before`, useful for disambiguation from similar functions that
- * operate on other date/time types.
+ * Alias of {@link before}, useful for disambiguation from similar functions
+ * that operate on other date/time types.
  */
 export const dateBefore = before;
 
 /**
  * Returns `true` if `a` refers to a date before `b`.
  *
- * Curried variant of `before`.
+ * Curried variant of {@link before}.
  */
 export function beforeFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => before(a, b);
@@ -478,7 +482,7 @@ export function beforeFn(b: DateOptions): (a: DateOptions) => boolean {
 /**
  * Returns `true` if `a` refers to a date before `b`.
  *
- * Curried variant of `dateBefore`.
+ * Curried variant of {@link dateBefore}.
  */
 export const dateBeforeFn = beforeFn;
 
@@ -492,7 +496,7 @@ export function beforeOrEqual(a: DateOptions, b: DateOptions): boolean {
 /**
  * Returns `true` if `a` refers to a date before or the same as `b`.
  *
- * Alias of `beforeOrEqual`, useful for disambiguation from similar
+ * Alias of {@link beforeOrEqual}, useful for disambiguation from similar
  * functions that operate on other date/time types.
  */
 export const dateBeforeOrEqual = beforeOrEqual;
@@ -500,7 +504,7 @@ export const dateBeforeOrEqual = beforeOrEqual;
 /**
  * Returns `true` if `a` refers to a date before or the same as `b`.
  *
- * Curried variant of `beforeOrEqual`.
+ * Curried variant of {@link beforeOrEqual}.
  */
 export function beforeOrEqualFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => beforeOrEqual(a, b);
@@ -509,7 +513,7 @@ export function beforeOrEqualFn(b: DateOptions): (a: DateOptions) => boolean {
 /**
  * Returns `true` if `a` refers to a date before or the same as `b`.
  *
- * Curried variant of `dateBeforeOrEqual`.
+ * Curried variant of {@link dateBeforeOrEqual}.
  */
 export const dateBeforeOrEqualFn = beforeOrEqualFn;
 
@@ -523,15 +527,15 @@ export function after(a: DateOptions, b: DateOptions): boolean {
 /**
  * Returns `true` if `a` refers to a date after `b`.
  *
- * Alias of `after`, useful for disambiguation from similar functions that
- * operate on other date/time types.
+ * Alias of {@link after}, useful for disambiguation from similar functions
+ * that operate on other date/time types.
  */
 export const dateAfter = after;
 
 /**
  * Returns `true` if `a` refers to a date after `b`.
  *
- * Curried variant of `after`.
+ * Curried variant of {@link after}.
  */
 export function afterFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => after(a, b);
@@ -540,7 +544,7 @@ export function afterFn(b: DateOptions): (a: DateOptions) => boolean {
 /**
  * Returns `true` if `a` refers to a date after `b`.
  *
- * Curried variant of `dateAfter`.
+ * Curried variant of {@link dateAfter}.
  */
 export const dateAfterFn = afterFn;
 
@@ -554,15 +558,15 @@ export function afterOrEqual(a: DateOptions, b: DateOptions): boolean {
 /**
  * Returns `true` if `a` refers to a date after or the same as `b`.
  *
- * Alias of `afterOrEqual`, useful for disambiguation from similar functions
- * that operate on other date/time types.
+ * Alias of {@link afterOrEqual}, useful for disambiguation from similar
+ * functions that operate on other date/time types.
  */
 export const dateAfterOrEqual = afterOrEqual;
 
 /**
  * Returns `true` if `a` refers to a date after or the same as `b`.
  *
- * Curried variant of `afterOrEqual`.
+ * Curried variant of {@link afterOrEqual}.
  */
 export function afterOrEqualFn(b: DateOptions): (a: DateOptions) => boolean {
     return a => afterOrEqual(a, b);
@@ -571,7 +575,7 @@ export function afterOrEqualFn(b: DateOptions): (a: DateOptions) => boolean {
 /**
  * Returns `true` if `a` refers to a date after or the same as `b`.
  *
- * Curried variant of `dateAfterOrEqual`.
+ * Curried variant of {@link dateAfterOrEqual}.
  */
 export const dateAfterOrEqualFn = afterOrEqualFn;
 
@@ -585,15 +589,15 @@ export function earliest<T extends DateOptions, U extends DateOptions>(a: T, b: 
 /**
  * Compares two dates and returns the earlier of the two.
  *
- * Alias of `earliest`, useful for disambiguation from similar functions that
- * operate on other date/time types.
+ * Alias of {@link earliest}, useful for disambiguation from similar functions
+ * that operate on other date/time types.
  */
 export const earliestDate = earliest;
 
 /**
  * Compares two dates and returns the earlier of the two.
  *
- * Curried variant of `earliest`.
+ * Curried variant of {@link earliest}.
  */
 export function earliestFn<T extends DateOptions, U extends DateOptions>(b: U): (a: T) => T | U {
     return a => earliest(a, b);
@@ -602,7 +606,7 @@ export function earliestFn<T extends DateOptions, U extends DateOptions>(b: U): 
 /**
  * Compares two dates and returns the earlier of the two.
  *
- * Curried variant of `earliestDate`.
+ * Curried variant of {@link earliestDate}.
  */
 export const earliestDateFn = earliestFn;
 
@@ -616,15 +620,15 @@ export function latest<T extends DateOptions, U extends DateOptions>(a: T, b: U)
 /**
  * Compares two dates and returns the later of the two.
  *
- * Alias of `latest`, useful for disambiguation from similar functions that
- * operate on other date/time types.
+ * Alias of {@link latest}, useful for disambiguation from similar functions
+ * that operate on other date/time types.
  */
 export const latestDate = latest;
 
 /**
  * Compares two dates and returns the later of the two.
  *
- * Curried variant of `latest`.
+ * Curried variant of {@link latest}.
  */
 export function latestFn<T extends DateOptions, U extends DateOptions>(b: U): (a: T) => T | U {
     return a => latest(a, b);
@@ -633,7 +637,7 @@ export function latestFn<T extends DateOptions, U extends DateOptions>(b: U): (a
 /**
  * Compares two dates and returns the later of the two.
  *
- * Curried variant of `latestDate`.
+ * Curried variant of {@link latestDate}.
  */
 export const latestDateFn = latestFn;
 
@@ -664,7 +668,7 @@ export function todayLocal(): Date {
 }
 
 /**
- * Parses a Date from text in ISO 8601 format.
+ * Parses a {@link Date} from text in ISO 8601 format.
  *
  * The ISO 8601 text must not specify a time zone offset.
  *
