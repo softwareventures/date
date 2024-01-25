@@ -1088,7 +1088,7 @@ __metadata:
     "@softwareventures/prettier-config": "npm:4.0.0"
     "@softwareventures/semantic-release-config": "npm:4.0.0"
     "@softwareventures/tsconfig": "npm:7.1.0"
-    "@types/is-integer": "npm:1.0.2"
+    "@types/is-integer": "npm:^1.0.2"
     "@typescript-eslint/eslint-plugin": "npm:5.62.0"
     "@typescript-eslint/parser": "npm:5.62.0"
     ava: "npm:6.1.0"
@@ -1102,7 +1102,7 @@ __metadata:
     eslint-plugin-sonarjs: "npm:0.23.0"
     husky: "npm:8.0.3"
     inquirer: "npm:8.2.6"
-    is-integer: "npm:1.0.7"
+    is-integer: "npm:^1.0.7"
     is-integer-in-range: "npm:^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0"
     pinst: "npm:3.0.0"
     prettier: "npm:2.8.8"
@@ -1261,7 +1261,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/is-integer@npm:1.0.2, @types/is-integer@npm:^1.0.0":
+"@types/is-integer@npm:1.0.2, @types/is-integer@npm:^1.0.0, @types/is-integer@npm:^1.0.2":
   version: 1.0.2
   resolution: "@types/is-integer@npm:1.0.2"
   checksum: 412ff56482710d981218916e86e36c4d8947e6866707f92e880d4396ae8f36dacd4e694bb766ecdfe985c3530a14d5624cb28382a413f899a82c5e98ef625000
