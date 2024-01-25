@@ -10,20 +10,22 @@ import {JsDate} from "./js-date";
 
 /** A date in the Gregorian calendar, with no associated time zone. */
 export interface Date {
-    /** Type discriminator identifying the object as a Date. */
+    /** Type discriminator identifying the object as a `Date`. */
     readonly type: "Date";
-    /** The day of the month. Should be in the range 1-31. */
+    /** The day of the month. Should be in the range `1`-`31`. */
     day: number;
-    /** The month of the year. Should be in the range 1-12. */
+    /** The month of the year. Should be in the range `1`-`12`. */
     month: number;
     /**
      * The year.
      *
      * Positive values represent years in the Common Era (CE/AD). For example
-     * 2020 represents 2020 CE, the year this module was first published to npm.
+     * `2020` represents 2020 CE, the year this module was first published to
+     * npm.
      *
      * Negative values or zero represent years before the Common Era (BCE/BC).
-     * Zero represents 1 BCE, -1 represents 2 BCE, -2 represents 3 BCE, etc.
+     * Zero represents 1 BCE, `-1` represents 2 BCE, `-2` represents 3 BCE,
+     * etc.
      *
      * Note that there is no year zero in the Gregorian calendar. The year
      * 1 BCE was immediately followed by 1 CE.
@@ -32,30 +34,32 @@ export interface Date {
 }
 
 /**
- * Options required to construct a Date.
+ * Options required to construct a `Date`.
  *
- * An existing Date object may be used in place of DateOptions.
+ * An existing `Date` object may be used in place of `DateOptions`.
  */
 export interface DateOptions {
     /**
-     * Type discriminator identifying the object as a Date.
+     * Type discriminator identifying the object as a `Date`.
      *
      * If specified, must be the string `"Date"`. This is to prevent errors
-     * caused by a DateTime being accidentally passed to Date functions.
+     * caused by a `DateTime` being accidentally passed to `Date` functions.
      */
     readonly type?: "Date";
-    /** The day of the month. Should be in the range 1-31. */
+    /** The day of the month. Should be in the range `1`-`31`. */
     readonly day: number;
-    /** The month of the year. Should be in the range 1-12. */
+    /** The month of the year. Should be in the range `1`-`12`. */
     readonly month: number;
     /**
      * The year.
      *
      * Positive values represent years in the Common Era (CE/AD). For example
-     * 2020 represents 2020 CE, the year this module was first published to npm.
+     * `2020` represents 2020 CE, the year this module was first published to
+     * npm.
      *
      * Negative values or zero represent years before the Common Era (BCE/BC).
-     * Zero represents 1 BCE, -1 represents 2 BCE, -2 represents 3 BCE, etc.
+     * Zero represents 1 BCE, `-1` represents 2 BCE, `-2` represents 3 BCE,
+     * etc.
      *
      * Note that there is no year zero in the Gregorian calendar. The year
      * 1 BCE was immediately followed by 1 CE.
@@ -77,14 +81,15 @@ export const NOVEMBER = 11; // eslint-disable-line @typescript-eslint/naming-con
 export const DECEMBER = 12; // eslint-disable-line @typescript-eslint/naming-convention
 
 /**
- * Tests if the specified year is a leap year. Returns true if it is,
- * otherwise false.
+ * Tests if the specified year is a leap year. Returns `true` if it is,
+ * otherwise `false`.
  *
  * Positive values represent years in the Common Era (CE/AD). For example
- * 2020 represents 2020 CE, the year this module was first published to npm.
+ * `2020` represents 2020 CE, the year this module was first published to npm.
  *
  * Negative values or zero represent years before the Common Era (BCE/BC).
- * Zero represents 1 BCE, -1 represents 2 BCE, -2 represents 3 BCE, etc.
+ * Zero represents 1 BCE, `-1` represents 2 BCE, `-2` represents 3 BCE,
+ * etc.
  *
  * Note that there is no year zero in the Gregorian calendar. The year
  * 1 BCE was immediately followed by 1 CE.
@@ -96,15 +101,16 @@ export function isLeapYear(year: number): boolean {
 /**
  * Returns the number of days in the specified month in the specified year.
  *
- * @param month - An integer representing the month, in the range 1 (January)
- *   to 12 (December).
+ * @param month - An integer representing the month, in the range `1` (January)
+ *   to `12` (December).
  *
  * @param year - An integer representing the year. Positive values represent
- *   years in the Common Era (CE/AD). For example 2020 represents 2020 CE, the
- *   year this module was first published to npm. Negative values or zero
+ *   years in the Common Era (CE/AD). For example `2020` represents 2020 CE,
+ *   the year this module was first published to npm. Negative values or zero
  *   represent years before the Common Era (BCE/BC). Zero represents 1 BCE,
- *   -1 represents 2 BCE, -2 represents 3 BCE, etc. There is no year zero in
- *   the Gregorian calendar. The year 1 BCE was immediately followed by 1 CE.
+ *   `-1` represents 2 BCE, `-2` represents 3 BCE, etc. There is no year zero
+ *   in the Gregorian calendar. The year 1 BCE was immediately followed by 1
+ *   CE.
  */
 export function daysInMonth(month: number, year: number): number {
     if (month < JANUARY || month > DECEMBER) {
@@ -118,16 +124,16 @@ export function daysInMonth(month: number, year: number): number {
 }
 
 /**
- * Tests if the specified value has the shape of a Date object.
+ * Tests if the specified value has the shape of a `Date` object.
  *
- * Returns true if the value is an object with numeric year, month and day
- * fields.
+ * Returns `true` if the value is an object with numeric `year`, `month` and
+ * `day` fields.
  *
  * The fields may be non-integers or outside the valid range, meaning that the
  * object may not represent a valid date.
  *
- * To also test that the year, month, day are integers within the valid range,
- * use {@link isValidDate} instead.
+ * To also test that the `year`, `month`, `day` fields are integers within the
+ * valid range, use {@link isValidDate} instead.
  */
 export function isDate(value: unknown): value is Date {
     return (
@@ -145,19 +151,19 @@ export function isDate(value: unknown): value is Date {
 }
 
 /**
- * Tests if the specified value is a Date object representing a valid date.
+ * Tests if the specified value is a `Date` object representing a valid date.
  *
- * Returns true if the value is an object with a numeric year, month and day
- * fields and the fields are all integers inside the valid range.
+ * Returns `true` if the value is an object with a numeric `year`, `month` and
+ * `day` fields and the fields are all integers inside the valid range.
  */
 export function isValidDate(value: unknown): value is Date {
     return isDate(value) && isValid(value);
 }
 
 /**
- * Tests if the specified Date object represents a valid date.
+ * Tests if the specified `Date` object represents a valid date.
  *
- * Returns true if the year, month and day fields are all integers inside the
+ * Returns `true` if the `year`, `month` and `day` fields are all integers inside the
  * valid range.
  */
 export function isValid(date: DateOptions): boolean {
@@ -170,20 +176,20 @@ export function isValid(date: DateOptions): boolean {
 }
 
 /**
- * Tests if the specified Date object represents a valid date.
+ * Tests if the specified `Date` object represents a valid date.
  *
- * Returns true if the year, month and day fields are all integers inside the
- * valid range.
+ * Returns `true` if the `year`, `month` and `day` fields are all integers
+ * inside the valid range.
  *
  * Alias for `isValid`.
  */
 export const dateIsValid = isValid;
 
 /**
- * Asserts that the specified Date object represents a valid date.
+ * Asserts that the specified `Date` object represents a valid date.
  *
- * @throws {Error} if any of the year, month or day fields are non-integers or
- *   outside the valid range.
+ * @throws {Error} if any of the `year`, `month` or `day` fields are
+ *   non-integers or outside the valid range.
  */
 export function validate(date: DateOptions): void {
     if (!isValid(date)) {
@@ -192,19 +198,20 @@ export function validate(date: DateOptions): void {
 }
 
 /**
- * Asserts that the specified Date object represents a valid date.
+ * Asserts that the specified `Date` object represents a valid date.
  *
  * Alias for `validate`.
  *
- * @throws {Error} if any of the year, month or day fields are non-integers or
- *   outside the valid range.
+ * @throws {Error} if any of the `year`, `month` or `day` fields are
+ *   non-integers or outside the valid range.
  */
 export const validateDate = validate;
 
 /**
- * Constructs a normalized date object from the specified year, month and day.
+ * Constructs a normalized `Date` object from the specified `year`, `month`
+ * and `day`.
  *
- * If the month or day fields are outside the valid range, then they will
+ * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
  */
 export function date(date: DateOptions): Date {
@@ -212,9 +219,9 @@ export function date(date: DateOptions): Date {
 }
 
 /**
- * Normalizes the specified date object so that it represents a valid date.
+ * Normalizes the specified `Date` object so that it represents a valid date.
  *
- * If the month or day fields are outside the valid range, then they will
+ * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
  */
 export function normalize(date: DateOptions): Date {
@@ -222,9 +229,9 @@ export function normalize(date: DateOptions): Date {
 }
 
 /**
- * Normalizes the specified date object so that it represents a valid date.
+ * Normalizes the specified `Date` object so that it represents a valid date.
  *
- * If the month or day fields are outside the valid range, then they will
+ * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
  *
  * Alias for `normalize`.
@@ -232,7 +239,7 @@ export function normalize(date: DateOptions): Date {
 export const normalizeDate = normalize;
 
 /**
- * Converts the specified date to a count of the number of days since the
+ * Converts the specified `Date` to a count of the number of days since the
  * reference date of 1st January, 1 CE.
  */
 export function toReferenceDays(date: Partial<DateOptions>): number {
@@ -259,7 +266,7 @@ export function toReferenceDays(date: Partial<DateOptions>): number {
 }
 
 /**
- *  Creates a date corresponding to the specified count of the number of days
+ *  Creates a `Date` corresponding to the specified count of the number of days
  *  since the reference date of 1st January, 1 CE.
  */
 export function fromReferenceDays(referenceDays: number): Date {
@@ -659,7 +666,8 @@ export function todayLocal(): Date {
     };
 }
 
-/** Parses a Date from text in ISO 8601 format.
+/**
+ * Parses a Date from text in ISO 8601 format.
  *
  * The ISO 8601 text must not specify a time zone offset.
  *
@@ -667,7 +675,8 @@ export function todayLocal(): Date {
  * returns `null`.
  *
  * Both extended `YYYY-MM-DD` and basic `YYYYMMDD` ISO 8601 formats are
- * accepted. */
+ * accepted.
+ */
 export function parseIso8601(text: string): Date | null {
     const match = /^([+-]?\d{4,})-?(\d{2})-?(\d{2})$/u.exec(text);
     if (match?.[1] == null || match[2] == null || match[3] == null) {
@@ -683,9 +692,11 @@ export function parseIso8601(text: string): Date | null {
 
 export const parseDateIso8601 = parseIso8601;
 
-/** Formats the specified Date as IS0 8601 extended, e.g. `2021-05-01`.
+/**
+ * Formats the specified Date as IS0 8601 extended, e.g. `2021-05-01`.
  *
- * For other formats, see @softwareventures/format-date. */
+ * For other formats, see `@softwareventures/format-date`.
+ */
 export const formatIso8601 = format.iso8601;
 
 export const formatDateIso8601 = format.iso8601;
