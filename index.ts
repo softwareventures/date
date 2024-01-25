@@ -186,7 +186,7 @@ export function isValid(date: DateOptions): boolean {
  *
  * Dates returned by functions in this library are always valid.
  *
- * Alias for {@link isValid}.
+ * Alias of {@link isValid}.
  */
 export const dateIsValid = isValid;
 
@@ -209,7 +209,7 @@ export function validate(date: DateOptions): void {
  *
  * Dates returned by functions in this library are always valid.
  *
- * Alias for {@link validate}.
+ * Alias of {@link validate}.
  *
  * @throws {Error} if any of the `year`, `month` or `day` fields are
  *   non-integers or outside the valid range.
@@ -244,7 +244,7 @@ export function normalize(date: DateOptions): Date {
  * If the `month` or `day` fields are outside the valid range, then they will
  * roll over into the next month or year.
  *
- * Alias for {@link normalize}.
+ * Alias of {@link normalize}.
  */
 export const normalizeDate = normalize;
 
