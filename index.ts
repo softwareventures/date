@@ -12,12 +12,14 @@ import {JsDate} from "./js-date";
 export interface Date {
     /** Type discriminator identifying the object as a `Date`. */
     readonly type: "Date";
-    /** The day of the month. Should be in the range `1`-`31`. */
+    /** The day of the month. Should be an integer in the range `1`-`31`. */
     day: number;
-    /** The month of the year. Should be in the range `1`-`12`. */
+    /** The month of the year. Should be an integer in the range `1`-`12`. */
     month: number;
     /**
      * The year.
+     *
+     * Should be an integer.
      *
      * Positive values represent years in the Common Era (CE/AD). For example
      * `2020` represents 2020 CE, the year this module was first published to
