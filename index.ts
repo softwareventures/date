@@ -649,9 +649,14 @@ export const dateAfterOrEqualFn = afterOrEqualFn;
 
 /**
  * Compares two dates and returns the earlier of the two.
+ *
+ * @throws {Error} if both specified `Date`s contain numeric fields that
+ *   are non-finite.
  */
-export function earliest<T extends DateOptions, U extends DateOptions>(a: T, b: U): T | U {
-    return after(a, b) ? b : a;
+export function earliest(a: DateOptions, b: DateOptions): Date {
+    const ad = toReferenceDays(a);
+    const bd = toReferenceDays(b);
+    return fromReferenceDays(ad < bd ? ad : bd);
 }
 
 /**
@@ -659,6 +664,9 @@ export function earliest<T extends DateOptions, U extends DateOptions>(a: T, b: 
  *
  * Alias of {@link earliest}, useful for disambiguation from similar functions
  * that operate on other date/time types.
+ *
+ * @throws {Error} if both specified `Date`s contain numeric fields that
+ *   are non-finite.
  */
 export const earliestDate = earliest;
 
@@ -666,8 +674,11 @@ export const earliestDate = earliest;
  * Compares two dates and returns the earlier of the two.
  *
  * Curried variant of {@link earliest}.
+ *
+ * @throws {Error} if both specified `Date`s contain numeric fields that
+ *   are non-finite.
  */
-export function earliestFn<T extends DateOptions, U extends DateOptions>(b: U): (a: T) => T | U {
+export function earliestFn(b: DateOptions): (a: DateOptions) => Date {
     return a => earliest(a, b);
 }
 
@@ -675,6 +686,9 @@ export function earliestFn<T extends DateOptions, U extends DateOptions>(b: U): 
  * Compares two dates and returns the earlier of the two.
  *
  * Curried variant of {@link earliestDate}.
+ *
+ * @throws {Error} if both specified `Date`s contain numeric fields that
+ *   are non-finite.
  */
 export const earliestDateFn = earliestFn;
 
