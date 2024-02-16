@@ -694,9 +694,14 @@ export const earliestDateFn = earliestFn;
 
 /**
  * Compares two dates and returns the later of the two.
+ *
+ * @throws {Error} if both specified `Date`s contain numeric fields that
+ *   are non-finite.
  */
-export function latest<T extends DateOptions, U extends DateOptions>(a: T, b: U): T | U {
-    return before(a, b) ? b : a;
+export function latest(a: DateOptions, b: DateOptions): Date {
+    const ad = toReferenceDays(a);
+    const bd = toReferenceDays(b);
+    return fromReferenceDays(ad > bd ? ad : bd);
 }
 
 /**
@@ -704,6 +709,9 @@ export function latest<T extends DateOptions, U extends DateOptions>(a: T, b: U)
  *
  * Alias of {@link latest}, useful for disambiguation from similar functions
  * that operate on other date/time types.
+ *
+ * @throws {Error} if both specified `Date`s contain numeric fields that
+ *   are non-finite.
  */
 export const latestDate = latest;
 
@@ -711,8 +719,11 @@ export const latestDate = latest;
  * Compares two dates and returns the later of the two.
  *
  * Curried variant of {@link latest}.
+ *
+ * @throws {Error} if both specified `Date`s contain numeric fields that
+ *   are non-finite.
  */
-export function latestFn<T extends DateOptions, U extends DateOptions>(b: U): (a: T) => T | U {
+export function latestFn(b: DateOptions): (a: DateOptions) => Date {
     return a => latest(a, b);
 }
 
@@ -720,6 +731,9 @@ export function latestFn<T extends DateOptions, U extends DateOptions>(b: U): (a
  * Compares two dates and returns the later of the two.
  *
  * Curried variant of {@link latestDate}.
+ *
+ * @throws {Error} if both specified `Date`s contain numeric fields that
+ *   are non-finite.
  */
 export const latestDateFn = latestFn;
 
